@@ -48,13 +48,13 @@ namespace myBlock {
 		// Ctors.
 		Block() = default;
 		Block(const unsigned long);
-		Block(const unsigned long, /* id */
+		Block(const unsigned long,     /* id */
 			char*,                 /* hash */
 			char*,                 /* previous hash */
 			const unsigned long,   /* nonce */
 			const time_t           /* time stamp */
 		);
-		Block(const unsigned long, /* id */
+		Block(const unsigned long,     /* id */
 			char*,                 /* previous hash */
 			const unsigned long,   /* nonce */
 			const time_t           /* time stamp */
