@@ -42,7 +42,6 @@ namespace myList
 	struct Node
 	{
 		Node() { next = nullptr; }
-		//Node(const Node&) = default;
 		~Node() { }
 
 		T element;                  // Data.
@@ -120,50 +119,6 @@ namespace myList
 			return os << std::endl;
 		}
 
-		//
-		// Inner class iterator. Member typedefs provided through inheritance from std::iterator.
-		class iterator : public std::iterator<std::forward_iterator_tag, T, ptrdiff_t, T*, T&>
-		{
-		private:
-			Node<T> *plistNode;
-
-			// Ctor is private, so only friends can create instances.
-			iterator(Node<T> *newPtr) : plistNode(newPtr) { }
-
-			friend class list;
-
-		public:
-			iterator() : plistNode(nullptr) { }
-
-			// Overload comparison operators.
-			bool operator== (const iterator& it) const { return plistNode == it.plistNode; }
-			bool operator!= (const iterator& it) const { return plistNode != it.plistNode; }
-
-			// Overload dereference and pointer operators.
-			T& operator* () { return plistNode->next->element; }
-			const T& operator* () const { return plistNode->next->element; }
-			T* operator-> () { return &plistNode->element; }
-
-			// Overload postfix increment operator.
-			iterator operator++ (int)
-			{
-				iterator temp = *this;
-
-				plistNode = plistNode->next;
-				return temp;
-			}
-
-			// Overload prefix increment operator.
-			iterator& operator++ ()
-			{
-				plistNode = plistNode->next;
-				return *this;
-			}
-		}; // End iterator inner class.
-
-		// Begin and end iterators.
-		iterator begin() const { return iterator(head); }
-		iterator end() const { return iterator(tail); }
 	};
 }
 #endif
