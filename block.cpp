@@ -119,5 +119,3 @@ void Block::MineBlock(unsigned int difficulty)
 }
 
 time_t Block::timeStamp() const { return std::time(0); }
-
-bool Block::isHashValid() { return calcHash() == std::stoi(getHash()); }
