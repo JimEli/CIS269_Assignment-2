@@ -86,9 +86,6 @@ namespace myBlock {
 		// Mine blocks.
 		void MineBlock(unsigned int);
 
-		// Validate hash value for block.
-		bool isHashValid();
-
 		// Print formatted block data.
 		friend std::ostream& operator<< (std::ostream& os, const Block& block)
 		{
