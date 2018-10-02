@@ -49,27 +49,6 @@ namespace myBlockchain
 		// Print entire chain.
 		void walkChain() const { std::cout << chain; }
 
-		// Walk chain checking all hashes.
-		bool isChainValid()
-		{
-			list<Block>::iterator it;
-
-			for (it = chain.begin(); it != chain.end(); ++it)
-			{
-				Block currentBlock = *it;
-				if (!currentBlock.isHashValid())
-					return false;
-				// Check if this is the first item.
-//				if (it != chain.begin())
-//				{
-//					Block previousBlock = *(it - 1);
-//					if (currentBlock.getPreviousHash() != previousBlock.getHash())
-//						return false;
-//				}
-			}
-			return true;
-		}
-
 	private:
 		// Retrieve previous block in chain.
 		Block getPreviousBlock() const { return chain.back(); }
