@@ -96,7 +96,7 @@ void Block::MineBlock(unsigned int difficulty)
 	// Build string with difficulty number of leading zeros.
 	std::string sDifficulty(difficulty, '0');
 
-	uint32_t hash;              // Temp holder of 32-bit hash value.
+	uint32_t hash;			// Temp holder of 32-bit hash value.
 	std::stringstream hexHash;	// Hash value formatted as hex string.
 
 	// Loop (incrementing nonce) until hash meets difficulty level.
