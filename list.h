@@ -13,10 +13,10 @@
 * List member functions (only) include:
 *   back()      // Returns element at tail of list.
 *   empty()     // Returns true if list is empty.
-*	push_back() // Adds new node to tail of list.
-*	pop_front() // Removes front element from list.
-*	clear()     // Clears list of all elements.
-*	operator<<  // Overloaded << operator prints list contents.
+*   push_back() // Adds new node to tail of list.
+*   pop_front() // Removes front element from list.
+*   clear()     // Clears list of all elements.
+*   operator<<  // Overloaded << operator prints list contents.
 *
 * Notes:
 *  (1) Compiled/tested with MS Visual Studio 2017 Community (v141), and
@@ -33,7 +33,7 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
-#include <iostream>
+#include <iostream>  // Output stream.
 
 namespace myList
 {
